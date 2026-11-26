@@ -1,9 +1,13 @@
-# Team Division of Work (P1, P2, P3)
+# Team Division of Work (Mrida, Jasnav, Atika)
 
 **Course:** COMPSCI 4411/9538 — Group 16  
-**Members (to be mapped to P1, P2, P3):** Mrida Hingmire, Atika Hussain, Jasnav Bajaj  
+**Project Topic:** PostgreSQL Tuning Tools  
+**Members & Role Mapping:**
+- **Mrida Hingmire (P1):** Benchmark Harness, pgBadger & pgMustard, Optimization Exp 1, Methodology & Baseline Writing (~42.5 hrs)
+- **Jasnav Bajaj (P2):** Data Seeding, postgresqltuner & dbForge Studio, Overhead & Bloat Exp 2, Tool Profiles & Limitations Writing (~43.5 hrs)
+- **Atika Hussain (P3):** Workload Queries, Scenarios S05–S08, Cross-Tool Audit, Optimization Exp 3, Comparative Analysis Writing (~42.0 hrs)
 
-This allocation uses neutral labels (**P1**, **P2**, **P3**) and enforces a **cross-functional, balanced distribution (~42–43 hours per member)**. No single person owns all database work, all scripting, all documentation, or an entire tool in isolation.
+This allocation enforces a **cross-functional, perfectly balanced distribution (~42–44 hours per member)**. No single person owns only frontend, only backend, only documentation, or a single tool in isolation. Every member has full-stack responsibilities: SQL & database scripts, tool evaluations, experimental runs, report writing, and presentation/demo delivery.
 
 ---
 
@@ -11,9 +15,9 @@ This allocation uses neutral labels (**P1**, **P2**, **P3**) and enforces a **cr
 
 | Member | Primary Focus Areas | Shared & Cross-Review Duties | Target Hours |
 |---|---|---|---|
-| **P1** | Shared Docker/PG infrastructure; `customers` schema & `pgbench` seeding; `run_benchmark.py` harness; primary runs of **pgBadger** + **pgMustard** (`S01`, `S06`, `S08`); optimization tests (`S01`/`S08`); methodology & baseline results writing | Peer-review P2's scenarios & `postgresqltuner` notes; contribute to shared baseline, slides, & demo video | **43 hrs** |
-| **P2** | Shared Docker/PG verification; `orders` schema & deterministic 500k generator; scenarios `S01`–`S04` & `S05`–`S08` SQL validation; primary runs of **postgresqltuner** + **dbForge** (`S02`, `S03`, `S04`, `S05`); overhead tests; tool-eval & findings writing | Peer-review P3's comparison scripts & `dbForge` profiler captures; contribute to shared baseline, slides, & demo video | **43 hrs** |
-| **P3** | Shared Docker/PG verification; `custom_queries` & `custom_order_oltp.sql` workload; `compare_before_after.py` & `generate_figures.py`; cross-tool verification on `S04`, `S05`, `S07` across **pgBadger**, **pgMustard**, **dbForge**, & **postgresqltuner**; optimization tests (`S06`/`S07`); architecture & comparative analysis writing | Peer-review P1's benchmark parser & `pgBadger` log configs; contribute to shared baseline, slides, & demo video | **42 hrs** |
+| **Mrida Hingmire (P1)** | Shared Docker/PG infrastructure; `customers` schema & `pgbench` scale 50 init; `run_benchmark.py` harness; primary evaluation of **pgBadger** + **pgMustard** (`S01`, `S06`, `S08`); Optimization Exp 1 (`S01`/`S08` before/after); Methodology & Baseline results report writing | Peer-review Jasnav's scenarios & `postgresqltuner` findings; contribute to shared baseline, slides, & demo video | **42.5 hrs** |
+| **Jasnav Bajaj (P2)** | Shared Docker/PG verification; `orders` schema & deterministic 500k generator; scenarios `S01`–`S04` SQL verification; primary evaluation of **postgresqltuner** + **dbForge Studio** (`S02`, `S03`, `S04`, `S05`); Observability Overhead test (`measure_overhead.py`); Optimization Exp 2 (`S02`/`S03`/`S04` bloat/index); Tool Profiles & Limitations report writing | Peer-review Atika's comparison scripts & `dbForge` captures; contribute to shared baseline, slides, & demo video | **43.5 hrs** |
+| **Atika Hussain (P3)** | Shared Docker/PG verification; `custom_queries` & `custom_order_oltp.sql` workload; scenarios `S05`–`S08` SQL verification; `compare_before_after.py` & `generate_figures.py`; cross-tool verification on `S04`, `S05`, `S07`; Optimization Exp 3 (`S05`/`S06`/`S07` config/joins); Architecture & Comparative Analysis report writing | Peer-review Mrida's benchmark parser & `pgBadger` log configurations; contribute to shared baseline, slides, & demo video | **42.0 hrs** |
 
 ---
 
