@@ -1,0 +1,4 @@
+label,run,tps,latency_avg_ms,latency_p50_ms,latency_p95_ms,latency_p99_ms,blks_hit,blks_read,cache_hit_ratio_pct,temp_files,temp_bytes,wall_seconds
+preliminary_baseline,1,92.546624,86.443,79.341,126.897,137.463,19470932,37,99.9998,0,0,24.296
+preliminary_baseline,2,91.368586,87.557,80.504,127.559,154.867,19202182,0,100.0,0,0,23.788
+preliminary_baseline,3,96.337655,83.041,76.507,119.852,133.431,20252694,0,100.0,0,0,23.808

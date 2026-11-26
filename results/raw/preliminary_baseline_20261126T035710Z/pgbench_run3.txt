@@ -1,0 +1,20 @@
+pgbench (17.12 (Debian 17.12-1.pgdg13+1))
+transaction type: /project/workload/pgbench/custom_order_oltp.sql
+scaling factor: 1
+query mode: simple
+number of clients: 8
+number of threads: 2
+maximum number of tries: 1
+duration: 15 s
+number of transactions actually processed: 1451
+number of failed transactions: 0 (0.000%)
+latency average = 83.041 ms
+initial connection time = 21.876 ms
+tps = 96.337655 (without initial connection time)
+statement latencies in milliseconds and failures:
+         0.004           0  \set cid random(1, 20000)
+         0.001           0  \set amt random(15, 1500)
+         1.394           0  SELECT c.customer_id, c.segment, COUNT(o.order_id) AS order_cnt, COALESCE(SUM(o.total_amount), 0) AS total_spent
+        69.805           0  SELECT order_id, customer_id, total_amount
+        11.547           0  UPDATE customers
+

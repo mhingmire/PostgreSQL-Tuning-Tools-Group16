@@ -1,0 +1,364 @@
+{
+  "run": 1,
+  "wall_seconds": 24.296,
+  "pgbench": {
+    "transactions_processed": 1394,
+    "tps": 92.546624,
+    "latency_avg_ms": 86.443,
+    "latency_p50_ms": 79.341,
+    "latency_p95_ms": 126.897,
+    "latency_p99_ms": 137.463,
+    "logged_tx_samples": 1394
+  },
+  "custom_queries": [
+    {
+      "query_id": "Q1_status_date_filter",
+      "repeats": 3,
+      "top_node_type": "Limit",
+      "mean_exec_ms": 43.495,
+      "p95_exec_ms": 46.135,
+      "min_exec_ms": 39.942,
+      "max_exec_ms": 46.351,
+      "avg_shared_blks_hit": 13599.0,
+      "avg_shared_blks_read": 0.0,
+      "avg_temp_blks_written": 0.0
+    },
+    {
+      "query_id": "Q2_priority_cancelled_agg",
+      "repeats": 3,
+      "top_node_type": "Aggregate",
+      "mean_exec_ms": 43.488,
+      "p95_exec_ms": 45.043,
+      "min_exec_ms": 42.426,
+      "max_exec_ms": 45.299,
+      "avg_shared_blks_hit": 13525.0,
+      "avg_shared_blks_read": 0.0,
+      "avg_temp_blks_written": 0.0
+    },
+    {
+      "query_id": "Q3_region_segment_join",
+      "repeats": 3,
+      "top_node_type": "Sort",
+      "mean_exec_ms": 141.878,
+      "p95_exec_ms": 146.663,
+      "min_exec_ms": 137.691,
+      "max_exec_ms": 147.336,
+      "avg_shared_blks_hit": 14778.0,
+      "avg_shared_blks_read": 0.0,
+      "avg_temp_blks_written": 0.0
+    },
+    {
+      "query_id": "Q4_customer_email_lookup",
+      "repeats": 3,
+      "top_node_type": "Index Scan",
+      "mean_exec_ms": 0.131,
+      "p95_exec_ms": 0.144,
+      "min_exec_ms": 0.118,
+      "max_exec_ms": 0.146,
+      "avg_shared_blks_hit": 4.0,
+      "avg_shared_blks_read": 0.0,
+      "avg_temp_blks_written": 0.0
+    },
+    {
+      "query_id": "Q5_region_top_orders_sort",
+      "repeats": 3,
+      "top_node_type": "Limit",
+      "mean_exec_ms": 66.512,
+      "p95_exec_ms": 76.079,
+      "min_exec_ms": 60.148,
+      "max_exec_ms": 77.675,
+      "avg_shared_blks_hit": 13613.0,
+      "avg_shared_blks_read": 0.0,
+      "avg_temp_blks_written": 0.0
+    },
+    {
+      "query_id": "Q6_vip_top_spenders",
+      "repeats": 3,
+      "top_node_type": "Limit",
+      "mean_exec_ms": 19.123,
+      "p95_exec_ms": 19.472,
+      "min_exec_ms": 18.624,
+      "max_exec_ms": 19.497,
+      "avg_shared_blks_hit": 3346.0,
+      "avg_shared_blks_read": 0.0,
+      "avg_temp_blks_written": 0.0
+    }
+  ],
+  "db_stats": {
+    "database": {
+      "datname": "tuning_lab",
+      "xact_commit": 7488,
+      "xact_rollback": 0,
+      "blks_read": 37,
+      "blks_hit": 19470932,
+      "cache_hit_ratio_pct": 99.9998,
+      "temp_files": 0,
+      "temp_bytes": 0,
+      "deadlocks": 0,
+      "blk_read_time": 0.968,
+      "blk_write_time": 1.094
+    },
+    "tables": [
+      {
+        "relname": "customers",
+        "seq_scan": 12,
+        "seq_tup_read": 240000,
+        "idx_scan": 2803,
+        "idx_tup_fetch": 2803,
+        "n_live_tup": 0,
+        "n_dead_tup": 407,
+        "total_bytes": 6414336
+      },
+      {
+        "relname": "orders",
+        "seq_scan": 3033,
+        "seq_tup_read": 703000000,
+        "idx_scan": 1730,
+        "idx_tup_fetch": 42708,
+        "n_live_tup": 0,
+        "n_dead_tup": 0,
+        "total_bytes": 126943232
+      },
+      {
+        "relname": "pgbench_accounts",
+        "seq_scan": 0,
+        "seq_tup_read": 0,
+        "idx_scan": 0,
+        "idx_tup_fetch": 0,
+        "n_live_tup": 0,
+        "n_dead_tup": 0,
+        "total_bytes": 784031744
+      },
+      {
+        "relname": "pgbench_branches",
+        "seq_scan": 0,
+        "seq_tup_read": 0,
+        "idx_scan": 0,
+        "idx_tup_fetch": 0,
+        "n_live_tup": 0,
+        "n_dead_tup": 0,
+        "total_bytes": 57344
+      },
+      {
+        "relname": "pgbench_history",
+        "seq_scan": 0,
+        "seq_tup_read": 0,
+        "idx_scan": null,
+        "idx_tup_fetch": null,
+        "n_live_tup": 0,
+        "n_dead_tup": 0,
+        "total_bytes": 0
+      },
+      {
+        "relname": "pgbench_tellers",
+        "seq_scan": 0,
+        "seq_tup_read": 0,
+        "idx_scan": 0,
+        "idx_tup_fetch": 0,
+        "n_live_tup": 0,
+        "n_dead_tup": 0,
+        "total_bytes": 90112
+      }
+    ],
+    "top_statements": [
+      {
+        "queryid": "2813641803418378521",
+        "calls": 1394,
+        "total_exec_ms": 100408.324,
+        "mean_exec_ms": 72.029,
+        "rows": 34850,
+        "shared_blks_hit": 18913161,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "SELECT order_id, customer_id, total_amount FROM orders WHERE order_status = $1 AND order_date >= TIMESTAMPTZ $2 ORDER BY order_date DESC LIM"
+      },
+      {
+        "queryid": "5050639621342090166",
+        "calls": 3,
+        "total_exec_ms": 432.794,
+        "mean_exec_ms": 144.265,
+        "rows": 0,
+        "shared_blks_hit": 45360,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT c.region, c.segment, COUNT(o.order_id) AS orders_cnt, ROUND(AVG(o.total_amount), $1) AS avg_o"
+      },
+      {
+        "queryid": "-434439757983098838",
+        "calls": 3,
+        "total_exec_ms": 424.448,
+        "mean_exec_ms": 141.483,
+        "rows": 60,
+        "shared_blks_hit": 44334,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT c.region, c.segment, COUNT(o.order_id) AS orders_cnt, ROUND(AVG(o.total_amount), $1) AS avg_o"
+      },
+      {
+        "queryid": "-8984452581384521298",
+        "calls": 1394,
+        "total_exec_ms": 266.512,
+        "mean_exec_ms": 0.191,
+        "rows": 1394,
+        "shared_blks_hit": 43212,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "SELECT c.customer_id, c.segment, COUNT(o.order_id) AS order_cnt, COALESCE(SUM(o.total_amount), $1) AS total_spent FROM customers c LEFT JOIN"
+      },
+      {
+        "queryid": "330351467214470255",
+        "calls": 1394,
+        "total_exec_ms": 225.349,
+        "mean_exec_ms": 0.162,
+        "rows": 1394,
+        "shared_blks_hit": 13314,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "UPDATE customers SET loyalty_points = loyalty_points + $1 WHERE customer_id = $2"
+      },
+      {
+        "queryid": "-5919966743966456919",
+        "calls": 3,
+        "total_exec_ms": 202.802,
+        "mean_exec_ms": 67.601,
+        "rows": 0,
+        "shared_blks_hit": 41256,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT order_id, customer_id, total_amount, order_date FROM orders WHERE shipping_region = $1 ORDER "
+      },
+      {
+        "queryid": "8137100896488119763",
+        "calls": 3,
+        "total_exec_ms": 199.149,
+        "mean_exec_ms": 66.383,
+        "rows": 750,
+        "shared_blks_hit": 40839,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT order_id, customer_id, total_amount, order_date FROM orders WHERE shipping_region = $1 ORDER "
+      },
+      {
+        "queryid": "7725766260012079002",
+        "calls": 3,
+        "total_exec_ms": 134.048,
+        "mean_exec_ms": 44.683,
+        "rows": 0,
+        "shared_blks_hit": 40913,
+        "shared_blks_read": 1,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT COUNT(*) AS cancelled_priority_cnt, COALESCE(SUM(total_amount), $1) AS cancelled_total FROM o"
+      },
+      {
+        "queryid": "-333173146138785233",
+        "calls": 3,
+        "total_exec_ms": 133.736,
+        "mean_exec_ms": 44.579,
+        "rows": 0,
+        "shared_blks_hit": 41199,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE order_status = $1 AND order"
+      },
+      {
+        "queryid": "7821139258918537179",
+        "calls": 3,
+        "total_exec_ms": 130.193,
+        "mean_exec_ms": 43.398,
+        "rows": 300,
+        "shared_blks_hit": 40797,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE order_status = $1 AND order"
+      },
+      {
+        "queryid": "2933339577665779295",
+        "calls": 3,
+        "total_exec_ms": 130.11,
+        "mean_exec_ms": 43.37,
+        "rows": 3,
+        "shared_blks_hit": 40575,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT COUNT(*) AS cancelled_priority_cnt, COALESCE(SUM(total_amount), $1) AS cancelled_total FROM o"
+      },
+      {
+        "queryid": "3283864849421071609",
+        "calls": 3,
+        "total_exec_ms": 63.418,
+        "mean_exec_ms": 21.139,
+        "rows": 0,
+        "shared_blks_hit": 10788,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT c.customer_id, c.full_name, COUNT(o.order_id) AS order_cnt, SUM(o.total_amount) AS lifetime_s"
+      },
+      {
+        "queryid": "5700467351239851244",
+        "calls": 3,
+        "total_exec_ms": 56.917,
+        "mean_exec_ms": 18.972,
+        "rows": 75,
+        "shared_blks_hit": 10038,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT c.customer_id, c.full_name, COUNT(o.order_id) AS order_cnt, SUM(o.total_amount) AS lifetime_s"
+      },
+      {
+        "queryid": "6115738803058280041",
+        "calls": 3,
+        "total_exec_ms": 3.231,
+        "mean_exec_ms": 1.077,
+        "rows": 0,
+        "shared_blks_hit": 348,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT customer_id, full_name, email, segment FROM customers WHERE email = $1"
+      },
+      {
+        "queryid": "-2761001626806327565",
+        "calls": 1,
+        "total_exec_ms": 1.696,
+        "mean_exec_ms": 1.696,
+        "rows": 1,
+        "shared_blks_hit": 250,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "SELECT COALESCE(json_agg(t), $1::json) FROM ( SELECT relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_live_tup, n_dead_tup, pg_to"
+      },
+      {
+        "queryid": "1852087220203776907",
+        "calls": 1,
+        "total_exec_ms": 0.372,
+        "mean_exec_ms": 0.372,
+        "rows": 1,
+        "shared_blks_hit": 0,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "SELECT pg_stat_statements_reset()"
+      },
+      {
+        "queryid": "5827696473711762202",
+        "calls": 1,
+        "total_exec_ms": 0.237,
+        "mean_exec_ms": 0.237,
+        "rows": 1,
+        "shared_blks_hit": 4,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "SELECT COALESCE(json_agg(t), $1::json) FROM ( SELECT datname, xact_commit, xact_rollback, blks_read, blks_hit, ROUND($2 * blks_hit / NULLIF("
+      },
+      {
+        "queryid": "7543423391756699266",
+        "calls": 3,
+        "total_exec_ms": 0.195,
+        "mean_exec_ms": 0.065,
+        "rows": 3,
+        "shared_blks_hit": 12,
+        "shared_blks_read": 0,
+        "temp_blks_written": 0,
+        "query_snippet": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) SELECT customer_id, full_name, email, segment FROM customers WHERE email = $1"
+      }
+    ]
+  }
+}

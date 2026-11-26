@@ -1,0 +1,35 @@
+# Environment secrets and credentials
+.env
+.env.local
+*.secret
+*.key
+*.pem
+
+# Docker / PostgreSQL runtime data & logs
+pgdata/
+logs/
+*.log
+*.log.*
+
+# Benchmark & raw runtime outputs (keep README/templates, ignore bulky ephemeral files if needed)
+results/raw/*.tmp
+results/raw/*.gz
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tool-specific temporary outputs
+tools/dbForge/*.bak
+tools/pgBadger/*.html
+!tools/pgBadger/README.md

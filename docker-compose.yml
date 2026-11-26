@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: tuning_lab_pg17
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-tuning_lab}
+      POSTGRES_USER: ${POSTGRES_USER:-projectuser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql/postgresql.conf"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/initialization/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      - ./database/initialization/01_extensions.sql:/docker-entrypoint-initdb.d/01_extensions.sql:ro
+      - ./database/schema/01_order_management_schema.sql:/docker-entrypoint-initdb.d/02_schema.sql:ro
+      - ./database:/project/database:ro
+      - ./workload:/project/workload:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-projectuser} -d $${POSTGRES_DB:-tuning_lab}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+volumes:
+  pgdata:
+    driver: local
